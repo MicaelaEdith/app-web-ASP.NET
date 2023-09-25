@@ -1,0 +1,15 @@
+﻿body{
+    background-color:black;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .form-control {
+        width: 40%;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-expand-md .form-control {
+        width: 85%;
+    }
+}
