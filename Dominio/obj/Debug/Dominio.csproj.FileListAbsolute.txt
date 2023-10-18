@@ -1,0 +1,6 @@
+C:\Users\micka\Documents\Programacion\E-Commerce_Catalogo-main\Dominio\bin\Debug\Dominio.dll
+C:\Users\micka\Documents\Programacion\E-Commerce_Catalogo-main\Dominio\bin\Debug\Dominio.pdb
+C:\Users\micka\Documents\Programacion\E-Commerce_Catalogo-main\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\micka\Documents\Programacion\E-Commerce_Catalogo-main\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\micka\Documents\Programacion\E-Commerce_Catalogo-main\Dominio\obj\Debug\Dominio.dll
+C:\Users\micka\Documents\Programacion\E-Commerce_Catalogo-main\Dominio\obj\Debug\Dominio.pdb
