@@ -1,0 +1,52 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Roboto&family=Roboto+Mono:wght@400;700&display=swap');
+
+/*
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+
+*/
+:root {
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    padding-bottom:10vh;
+    background-color:white;
+    }
+.navbar {
+    width: 100%;
+    /*position: fixed;*/
+    border-bottom: 1px solid var(--grey);
+   /* z-index: 1000;*/
+}
+.cardProducto {
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    font-size:small;
+    margin:15px;
+    border:solid 1px #e6e6e6;
+    border-radius:5px;
+    padding-left:2vw;
+    padding-right:2vw;
+}
+
+.cardProducto img{
+    height:35vh;
+    width:auto;
+
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .form-control {
+        width: 40%;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-expand-md .form-control {
+        width: 85%;
+    }
+}

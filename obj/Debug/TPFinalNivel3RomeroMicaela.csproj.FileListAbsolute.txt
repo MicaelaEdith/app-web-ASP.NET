@@ -57,3 +57,7 @@ C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\obj\Debug\TPFinalNivel3Ro
 C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\obj\Debug\TPFinalNivel3RomeroMicaela.csproj.CopyComplete
 C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\obj\Debug\TPFinalNivel3RomeroMicaela.dll
 C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\obj\Debug\TPFinalNivel3RomeroMicaela.pdb
+C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\bin\Dominio.dll
+C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\bin\Negocio.dll
+C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\bin\Dominio.pdb
+C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\bin\Negocio.pdb
