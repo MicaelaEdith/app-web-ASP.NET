@@ -32,8 +32,11 @@ namespace TPFinalNivel3RomeroMicaela
                 if (negocio.Login(user))
                 {
                     Session.Add("user", user);
-                    Console.WriteLine("Redirección exitosa");
-                    Response.Redirect("Favoritos.aspx", false);
+
+                    if (user.admin)
+                        Session.Add("administrar", true);
+
+                    Response.Redirect("Perfil.aspx", false);
                 }
                 else
                 {

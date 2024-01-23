@@ -24,14 +24,13 @@ namespace Negocio
                     user.Id = (int)datos.Lector["id"];
                     user.admin = (bool)datos.Lector["admin"];
                     if (!(datos.Lector["nombre"] is DBNull))
-                        user.nombre = (string)datos.Lector["nombre"];
+                        user.nombre= (string)datos.Lector["nombre"];
                     if (!(datos.Lector["apellido"] is DBNull))
-                        user.apellido = (string)datos.Lector["apellido"];
-                    if (!(datos.Lector["imagenPerfil"] is DBNull))
-                        user.urlImagenPerfil = (string)datos.Lector["urlImagenPerfil"];
+                         user.apellido = (string)datos.Lector["apellido"];
+                    if (!(datos.Lector["urlImagenPerfil"] is DBNull))
+                          user.urlImagenPerfil = (string)datos.Lector["urlImagenPerfil"];
+                        
 
-                    Console.WriteLine("paso");
-                    
                     return true;
 
                 }
