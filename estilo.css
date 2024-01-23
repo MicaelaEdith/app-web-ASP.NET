@@ -20,6 +20,9 @@ body{
     border-bottom: 1px solid var(--grey);
    /* z-index: 1000;*/
 }
+.nav-link:hover {
+    transform: scale(1.5);
+}
 .cardProducto {
     width:100%;
     height:auto;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -220,6 +221,61 @@ namespace Negocio
                 return false;
 
         }
+
+        public Producto detalleProducto(int id) {
+
+            AccesoDatos datos = new AccesoDatos();
+            Producto prod = new Producto();
+
+            string consulta = "Select * from articulos where Id="+id+";";
+
+            datos.Consulta(consulta);
+            datos.Leer();
+            while (datos.Lector.Read())
+            {
+                prod.Id = (int)datos.Lector["Id"];
+                prod.Codigo = (string)datos.Lector["Codigo"];
+                prod.Nombre = (string)datos.Lector["Nombre"];
+                prod.Descripcion = (string)datos.Lector["Descripcion"];
+                prod.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                prod.Precio = (decimal)datos.Lector["Precio"];
+
+            }
+
+            return prod;
+
+        }
+
+        public static string UrlImagenValida(string imageUrl)
+        {
+            if (string.IsNullOrEmpty(imageUrl) || !UrlExists(imageUrl))
+            {
+                return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/300px-Imagen_no_disponible.svg.png";
+            }
+            else
+            {
+                return imageUrl;
+            }
+        }
+
+        private static bool UrlExists(string url)
+        {
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+                request.Method = "HEAD";
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                {
+                    return (response.StatusCode == HttpStatusCode.OK);
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
+
+
 }
 

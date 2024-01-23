@@ -26,12 +26,18 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Catálogo</a>
                             </li>
+                            <%if (Session["user"] == null)
+                                { %>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Ingresar</a>
+                                <a class="nav-link active" aria-current="page" href="Login.aspx">Ingresar</a>
                             </li>
+                            <%}
+                            else
+                            {%>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Favoritos</a>
                             </li>
+                            <%}%>
                         </ul>
                         <form class="d-flex" role="search">
                             <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control me-1 mb-1" placeholder="Ingrese producto"></asp:TextBox>
@@ -39,7 +45,7 @@
                         </form>
                     </div>
                 </div>
-                
+
             </nav>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
@@ -47,7 +53,9 @@
     </form>
     <hr />
     <footer>
-        footer
+        <div cssclass="d-flex justify-content-center">
+            <h6>footer</h6>
+        </div>
     </footer>
 
 </body>

@@ -4,3 +4,9 @@ C:\Users\micka\Documents\Programacion\E-Commerce_Catalogo-main\Dominio\obj\Debug
 C:\Users\micka\Documents\Programacion\E-Commerce_Catalogo-main\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\micka\Documents\Programacion\E-Commerce_Catalogo-main\Dominio\obj\Debug\Dominio.dll
 C:\Users\micka\Documents\Programacion\E-Commerce_Catalogo-main\Dominio\obj\Debug\Dominio.pdb
+C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\Dominio\bin\Debug\Dominio.dll
+C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\Dominio\bin\Debug\Dominio.pdb
+C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\Dominio\obj\Debug\Dominio.dll
+C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\Dominio\obj\Debug\Dominio.pdb

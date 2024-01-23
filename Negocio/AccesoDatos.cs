@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Dominio;
 
 namespace Negocio
 {
@@ -35,14 +36,13 @@ namespace Negocio
             comando.Connection = conexion;
             try
             {
-            conexion.Open();
-            lector = comando.ExecuteReader();
+                conexion.Open();
+                lector = comando.ExecuteReader();
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Error al ejecutar la consulta", ex);
             }
-
         }
 
         public void Insertar()
@@ -68,9 +68,12 @@ namespace Negocio
 
         public void cerrarConexion()
         {
-            if (lector != null)
+            if (lector != null && !lector.IsClosed)
                 lector.Close();
-            conexion.Close();
+
+            if (conexion.State == System.Data.ConnectionState.Open)
+                conexion.Close();
         }
+
     }
 }

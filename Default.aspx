@@ -9,15 +9,16 @@
         <%
             foreach (Dominio.Producto prod in ListaProductos)
             { %>
-        <div class="cardProducto">
-            <img src="<%: prod.ImagenUrl %>" class="card-img-top" alt="<%: prod.Nombre %>" style="height:20vh;">
-            <div class="card-body">
+        <div class="cardProducto position-relative">
+         <div class="img-container" style="display: flex; align-items: flex-end; margin:0;">
+                    <img src="<%: prod.ImagenUrl %>" class="card-img-top img-fluid" style= " max-width: 100%; height: auto;" alt="<%: prod.Nombre %>">
+                </div>
+            <div class="card-body ">
                 <h5 class="card-title"><%: prod.Nombre %> </h5>
-                <p class="card-text"><%: prod.Descripcion %></p>
-                <a href="#" class="btn btn-secondary">Ver Detalle</a>
+                <p class="card-text pb-2 MB-2   "><%: prod.Descripcion%></p>
+                <a href="DetalleProducto.aspx?id=<%=prod.Id%>" class="btn btn-secondary position-absolute bottom-0 start-50 translate-middle-x mb-1 p-1">Ver Detalle</a>
             </div>
         </div>
         <% } %>
     </div>
-
 </asp:Content>

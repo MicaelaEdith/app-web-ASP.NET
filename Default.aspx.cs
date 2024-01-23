@@ -16,6 +16,11 @@ namespace TPFinalNivel3RomeroMicaela
         {
             ProductoNegocio negocio = new ProductoNegocio();
             ListaProductos = negocio.listaProductos();
+
+            foreach (var prod in ListaProductos)
+            {
+                prod.ImagenUrl = ProductoNegocio.UrlImagenValida(prod.ImagenUrl);
+            }
         }
     }
 }
