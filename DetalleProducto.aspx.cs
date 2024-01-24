@@ -13,6 +13,7 @@ namespace TPFinalNivel3RomeroMicaela
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             string id = Request.QueryString["id"].ToString();
 
             if (!string.IsNullOrEmpty(id))
@@ -24,6 +25,7 @@ namespace TPFinalNivel3RomeroMicaela
                 if (producto != null)
                 {
                     txtTitulo.Text = prod.Nombre;
+                    txtPrecio.InnerText = "$ "+prod.Precio.ToString("F2")+ ".-";
                     txtDescripcion.InnerText = prod.Descripcion;
                     imgProducto.Src = prod.ImagenUrl;
                 }

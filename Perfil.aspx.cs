@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
 
 namespace TPFinalNivel3RomeroMicaela
 {
@@ -14,6 +15,15 @@ namespace TPFinalNivel3RomeroMicaela
             if (Session["user"] == null)
             {
                 Response.Redirect("Default.aspx");
+            }
+            else {
+
+                User user = (User)Session["user"];
+
+                txtNombre.Text = user.nombre;
+                txtApellido.Text = user.apellido;
+                //imgPerfil.Src = user.urlImagenPerfil;
+                
             }
         }
 
@@ -33,6 +43,11 @@ namespace TPFinalNivel3RomeroMicaela
                 Response.Redirect("Default.aspx");
 
             }
+
+        }
+
+        protected void btnModificarPerfil_Click(object sender, EventArgs e)
+        {
 
         }
     }

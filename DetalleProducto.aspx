@@ -10,8 +10,9 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <a href="Favoritos.aspx"><div class="position-absolute top-0 end-0 bg-danger m-2" style="border:solid 3px #dc3545;border-radius:50%;">🤍</div></a>
+                    <a href="Perfil.aspx"><div class="position-absolute top-0 end-0 bg-danger m-2" style="border:solid 3px #dc3545;border-radius:50%;">🤍</div></a>
                     <asp:Label Text="" ID="txtTitulo" runat="server" CssClass="card-title display-6 mb-3" />
+                    <p runat="server" id="txtPrecio" class="card-text mt-3"></p>
                     <p runat="server" id="txtDescripcion" class="card-text mt-3"></p>
                     <asp:Button Text="Agregar al Carrito" CssClass="btn btn-secondary position-absolute bottom-0 mb-2 end-0 translate-middle-x" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" />
                 </div>

@@ -13,9 +13,13 @@
     <link href="estilo.css" rel="stylesheet" />
     <style>
         .navbar-nav .nav-link:hover {
+            transform: scale(1.02);
+            color: black;
+        }
+
+        .nav-link-home:hover {
             transform: scale(1.05);
             color: black;
-            
         }
     </style>
 </head>
@@ -24,7 +28,7 @@
         <div>
             <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="default.aspx">Home</a>
+                    <a class="navbar-brand nav-link-home" href="default.aspx">Home</a>
                     <button class="navbar-toggler" style="order: -1;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -39,8 +43,8 @@
                                 <a class="nav-link active" aria-current="page" href="Login.aspx">Ingresar</a>
                             </li>
                             <%}
-                            else
-                            {%>
+                                else
+                                {%>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="Perfil.aspx">Perfil</a>
                             </li>
