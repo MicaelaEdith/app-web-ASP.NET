@@ -13,6 +13,7 @@ namespace Negocio
         {
             List<Categoria> lista = new List<Categoria>();
             AccesoDatos datos = new AccesoDatos();
+            
             try
             {
                 datos.Consulta("SELECT ID,Descripcion from CATEGORIAS");

@@ -132,8 +132,7 @@ namespace Negocio
         {
             if (min == "") min = "0";
             if (max == "") max = "0";
-
-
+            
                 List<Producto> productosEncontrados = new List<Producto>();
                 AccesoDatos datos = new AccesoDatos();
             string consulta = "SELECT A.Id, Codigo, Nombre,A.Descripcion, M.Descripcion as Marca,C.Descripcion as Categoria,ImagenUrl,Precio,A.IdMarca,A.IdCategoria FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE M.Id=A.IdMarca and C.Id=A.IdCategoria ";
@@ -274,6 +273,51 @@ namespace Negocio
                 return false;
             }
         }
+
+        public List<Producto> busquedaRapida(String busqueda) {
+
+
+            List<Producto> productosEncontrados = new List<Producto>();
+            AccesoDatos datos = new AccesoDatos();
+
+
+            string consulta = "select * from articulos where Nombre like '%"+busqueda+"%' or descripcion like '%"+busqueda+"%'";
+            try
+            {
+                datos.Consulta(consulta);
+                datos.Leer();
+                while (datos.Lector.Read())
+                {
+                    Producto aux = new Producto();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    productosEncontrados.Add(aux);
+                }
+
+                return productosEncontrados;
+
+            }
+            catch (Exception ex)
+            {
+
+
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+
+
     }
 
 

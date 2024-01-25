@@ -4,15 +4,26 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
 
 namespace TPFinalNivel3RomeroMicaela
 {
     public partial class Administrar : System.Web.UI.Page
     {
+        public bool filtroAvanzado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["administrar"] == null) {
+            if (Session["administrar"] == null)
+            {
                 Response.Redirect("Default.aspx");
+            }
+            else {
+                filtroAvanzado = chkFiltroAvanzado.Checked;
+                ProductoNegocio negocio = new ProductoNegocio();
+
+                Session.Add("listaProductos", negocio.listaProductos()); ;
+                dgvProductos.DataSource = Session["listaProductos"];
+                dgvProductos.DataBind();
             }
 
         }
