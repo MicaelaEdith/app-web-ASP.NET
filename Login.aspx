@@ -13,13 +13,13 @@
         <div class="row">
             <div class="mt-3 mb-2 row justify-content-center">
                 <asp:Label Text="E-Mail: " CssClass="col-1 col-form-label" runat="server" />
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:TextBox ID="txtUser" CssClass="form-control" placeholder="Usuario" runat="server"></asp:TextBox>
                 </div>
             </div>
             <div class="mb-2 row justify-content-center">
-                <asp:Label Text="Password" CssClass="col-sm-1 col-form-label" runat="server" />
-                <div class="col-sm-8">
+                <asp:Label Text="Password:" CssClass="col-sm-1 col-form-label" runat="server" />
+                <div class="col-sm-6">
                     <asp:TextBox ID="txtPassword" CssClass="form-control" placeholder="********" TextMode="Password" runat="server" />
                     <asp:Button Text="Ingresar" ID="btnIngresar" OnClick="btnIngresar_Click" CssClass="btn btn-secondary mt-2" runat="server" />
                     <a href="/CrearCuenta.aspx" class="text-decoration-none fw-medium float-end">Crear cuenta</a>

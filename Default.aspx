@@ -54,7 +54,7 @@
                     <span class="input-group-text p-1">$</span>
                     <asp:TextBox runat="server" CssClass="form-control" ID="txtMax" placeholder="máximo" onkeypress="return soloNumeros(event)" />
                 </div>
-                <asp:Button Text="Buscar" runat="server" CssClass="btn btn-secondary" ID="btnBuscarSidebar" OnClick="btnBuscarSidebar_Click" />
+                <asp:Button Text="Buscar" runat="server" CssClass="btn btn-secondary p-1 float-end" ID="btnBuscarSidebar" OnClick="btnBuscarSidebar_Click" />
             </div>
             </div>
 
@@ -72,7 +72,7 @@
                         <p class="card-text pb-2 MB-3"><%: prod.Descripcion%></p>
                     </div>
                     <div>
-                        <a href="DetalleProducto.aspx?id=<%=prod.Id%>" class="btn btn-secondary position-absolute bottom-0 start-50 translate-middle-x mb-1 p-1">Ver Detalle</a>
+                        <a href="DetalleProducto.aspx?id=<%=prod.Id%>" class="btn btn-secondary position-absolute bottom-0 start-50 translate-middle-x mb-1 p-1">Ver detalle</a>
                     </div>
                 </div>
                 <% } %>

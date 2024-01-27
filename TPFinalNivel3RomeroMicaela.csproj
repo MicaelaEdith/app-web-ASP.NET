@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administrar.aspx" />
+    <Content Include="AdministrarProducto.aspx" />
     <Content Include="CrearCuenta.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DetalleProducto.aspx" />
@@ -84,6 +85,13 @@
     </Compile>
     <Compile Include="Administrar.aspx.designer.cs">
       <DependentUpon>Administrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrarProducto.aspx.cs">
+      <DependentUpon>AdministrarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarProducto.aspx.designer.cs">
+      <DependentUpon>AdministrarProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="CrearCuenta.aspx.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
