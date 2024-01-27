@@ -11,7 +11,7 @@ namespace TPFinalNivel3RomeroMicaela
 {
 
 
-    public partial class AdministrarProducto
+    public partial class EliminarProducto
     {
 
         /// <summary>
@@ -24,31 +24,13 @@ namespace TPFinalNivel3RomeroMicaela
         protected global::System.Web.UI.HtmlControls.HtmlImage imgProducto;
 
         /// <summary>
-        /// Control txtCodigo.
+        /// Control txtTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
-
-        /// <summary>
-        /// Control txtNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
-
-        /// <summary>
-        /// Control txtDescripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        protected global::System.Web.UI.WebControls.Label txtTitulo;
 
         /// <summary>
         /// Control txtPrecio.
@@ -57,51 +39,33 @@ namespace TPFinalNivel3RomeroMicaela
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrecio;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtPrecio;
 
         /// <summary>
-        /// Control drpCategoria.
+        /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpCategoria;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtDescripcion;
 
         /// <summary>
-        /// Control drpMarca.
+        /// Control btnEliminarDefinitivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpMarca;
+        protected global::System.Web.UI.WebControls.Button btnEliminarDefinitivo;
 
         /// <summary>
-        /// Control Aceptar.
+        /// Control cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Aceptar;
-
-        /// <summary>
-        /// Control Cancelar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Cancelar;
-
-        /// <summary>
-        /// Control EliminarProducto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EliminarProducto;
+        protected global::System.Web.UI.WebControls.Button cancelar;
     }
 }

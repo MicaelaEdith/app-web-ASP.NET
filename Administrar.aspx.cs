@@ -27,5 +27,19 @@ namespace TPFinalNivel3RomeroMicaela
             }
 
         }
+
+        protected void dgvProductos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Select")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                string IdProducto = dgvProductos.Rows[index].Cells[0].Text;
+
+                Response.Redirect("AdministrarProducto.aspx?codigo=" + IdProducto);
+            }
+        }
+
+
     }
 }

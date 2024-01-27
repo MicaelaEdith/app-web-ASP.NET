@@ -43,15 +43,17 @@
     </div>
     <%} %>
     <div style="max-width:95%; margin:auto">
-        <asp:GridView ID="dgvProductos" runat="server" DataKeyNames="codigo" CssClass="table" AutoGenerateColumns="false" AllowPaging="true" PageSize="10">
+        <asp:GridView ID="dgvProductos" runat="server" DataKeyNames="Id" CssClass="table" AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="dgvProductos_RowCommand">
             <Columns>
+                <asp:BoundField HeaderText="Id" DataField="Id" />
                 <asp:BoundField HeaderText="Código" DataField="codigo" />
                 <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                 <asp:BoundField HeaderText="Descripción" DataField="Descripcion" />
                 <asp:BoundField HeaderText="Categoria" DataField="Categoria.Descripcion" />
                 <asp:BoundField HeaderText="Marca" DataField="Marca.Descripcion" />
                 <asp:BoundField HeaderText="Precio" DataField="Precio" />
-                <asp:CommandField HeaderText="Modificar" ShowSelectButton="true" SelectText="🖊 " />
+                <asp:CommandField HeaderText="Modificar" ShowSelectButton="true" SelectText="Modificar" ControlStyle-CssClass="text-decoration-none fw-medium" />
+
             </Columns>
         </asp:GridView>
     </div>

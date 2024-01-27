@@ -226,7 +226,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             Producto prod = new Producto();
 
-            string consulta = "Select * from articulos where Id="+id+";";
+            string consulta = "SELECT A.Id, Codigo, Nombre,A.Descripcion, M.Descripcion as Marca,C.Descripcion as Categoria,ImagenUrl,Precio,A.IdMarca,A.IdCategoria FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE(M.Id= A.IdMarca and C.Id= A.IdCategoria) and A.id = "+id+";";
 
             datos.Consulta(consulta);
             datos.Leer();
@@ -236,6 +236,12 @@ namespace Negocio
                 prod.Codigo = (string)datos.Lector["Codigo"];
                 prod.Nombre = (string)datos.Lector["Nombre"];
                 prod.Descripcion = (string)datos.Lector["Descripcion"];
+                prod.Marca = new Marca();
+                prod.Marca.Id = (int)datos.Lector["IdMarca"];
+                prod.Marca.Descripcion = (string)datos.Lector["Marca"];
+                prod.Categoria = new Categoria();
+                prod.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                prod.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                 prod.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                 prod.Precio = (decimal)datos.Lector["Precio"];
 
