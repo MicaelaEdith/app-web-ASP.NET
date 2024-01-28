@@ -69,7 +69,7 @@ namespace TPFinalNivel3RomeroMicaela
             String marca = drpMarca.SelectedValue;
 
             ProductoNegocio negocio = new ProductoNegocio();
-            ListaProductos = negocio.buscar(min, max, categoria, marca);
+            ListaProductos = negocio.buscar(min, max, categoria, marca, null);
 
             foreach (var prod in ListaProductos)
             {

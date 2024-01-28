@@ -83,7 +83,22 @@ namespace TPFinalNivel3RomeroMicaela
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            //seguir desde acá
+            string categoria = drpCategoria.SelectedValue;
+            string marca = drpMarca.SelectedValue;
+            string filtro = txtFiltroAvanzado.Text;
+
+            ProductoNegocio negocio = new ProductoNegocio();
+            List<Producto> lista = negocio.buscar(null, null, categoria, marca, filtro);
+
+            dgvProductos.DataSource = lista;
+            dgvProductos.DataBind();
+        }
+
+        protected void txtFiltrar_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txtFiltrar.Text;
+            ProductoNegocio negocio = new ProductoNegocio();
+            List<Producto> lista = negocio.busquedaRapida(filtro);
         }
     }
 }

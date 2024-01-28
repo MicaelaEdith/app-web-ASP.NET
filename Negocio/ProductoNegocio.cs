@@ -128,28 +128,33 @@ namespace Negocio
             }
         }
 
-        public List<Producto> buscar(string min, string max, string categoria, string marca)
+        public List<Producto> buscar(string min, string max, string categoria, string marca, string filtro)
         {
             if (min == "") min = "0";
             if (max == "") max = "0";
             
                 List<Producto> productosEncontrados = new List<Producto>();
                 AccesoDatos datos = new AccesoDatos();
-            string consulta = "SELECT A.Id, Codigo, Nombre,A.Descripcion, M.Descripcion as Marca,C.Descripcion as Categoria,ImagenUrl,Precio,A.IdMarca,A.IdCategoria FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE M.Id=A.IdMarca and C.Id=A.IdCategoria ";
+            string consulta = "SELECT A.Id, Codigo, Nombre,A.Descripcion, M.Descripcion as Marca,C.Descripcion as Categoria,ImagenUrl,Precio,A.IdMarca,A.IdCategoria FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE (M.Id=A.IdMarca and C.Id=A.IdCategoria) ";
                 try
                 {
-
+                if (filtro == null)
+                {
                         if (min != "0" && max!= "0")
-                            consulta +=" and precio between " + min + " and " + max;
+                            consulta += " and precio between " + min + " and " + max;
                         else if (min == "0" && max != "0")
                             consulta += " and precio <= " + max;
                         else if (min != "0" && max =="0")
                             consulta += " and precio >= " + min;
 
+                }
 
-                if(categoria!="")consulta+= "and C.descripcion = '"+categoria+"'";
 
-                if (marca != "") consulta +="and M.descripcion= '"+marca+"'";
+                if(categoria != "")consulta+= " and C.descripcion = '"+categoria+"'";
+
+                if (marca != "") consulta +=" and M.descripcion= '"+marca+"'";
+
+                if (filtro.Trim() != "") consulta += " and (nombre like '%"+filtro+"%' or A.descripcion like '%"+filtro+"%')";
 
                     datos.Consulta(consulta);
                     datos.Leer();

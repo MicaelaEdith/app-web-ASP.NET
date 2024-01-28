@@ -8,7 +8,7 @@
         <div class="col">
             <div class="col-4 m-4">
                 <div style="display: inline;">
-                    <asp:TextBox ID="txtFiltrar" CssClass="form-control bg-body-secondary col-3" AutoPostBack="true" runat="server" placeholder="filtrar" />
+                    <asp:TextBox ID="txtFiltrar" CssClass="form-control bg-body-secondary col-3" AutoPostBack="true" runat="server" placeholder="filtrar" OnTextChanged="txtFiltrar_TextChanged"/>
                     
                     <asp:CheckBox Text="" ID="chkFiltroAvanzado" AutoPostBack="true" runat="server"/>
                         
