@@ -10,6 +10,16 @@
             color:dimgray;
         }
     </style>
+<script type="text/javascript">
+    function soloNumeros(e) {
+        var key = window.event ? e.keyCode : e.which;
+        var keychar = String.fromCharCode(key);
+
+        if (!/^\d*\.?\d*$/.test(keychar) && key !== 8) {
+            e.preventDefault();
+        }
+    }
+</script>
 
 
     <div class="row mx-auto m-3 mb-5 mt-5">
@@ -52,7 +62,7 @@
                     <label class="col-form-label">Precio:</label>
                 </div>
                 <div class="col-9">
-                    <asp:TextBox runat="server" CssClass="form-control" ID="txtPrecio" />
+                    <asp:TextBox runat="server" onkeypress="return soloNumeros(event)" CssClass="form-control" ID="txtPrecio" />
                 </div>
             </div>
 
@@ -79,7 +89,7 @@
                     <label class="col-form-label">Url Imagen:</label>
                 </div>
                 <div class="col-9">
-                    <asp:TextBox runat="server" CssClass="form-control"/>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="txtUrlImg"/>
                     <div class="float-end mt-3">
                         <asp:Button Text="Aceptar" runat="server" CssClass="btn btn-outline-secondary fw-semibold mt-2 p-1 pt-0 pb-0 " id="Aceptar" OnClick="Aceptar_Click"/>
                         <asp:Button Text="Cancelar" runat="server" CssClass="btn btn-outline-secondary fw-semibold mt-2 p-1 pt-0 pb-0 " id="Cancelar" OnClick="Cancelar_Click"/>

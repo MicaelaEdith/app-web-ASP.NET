@@ -53,8 +53,8 @@
                 <asp:BoundField HeaderText="Marca" DataField="Marca.Descripcion" />
                 <asp:BoundField HeaderText="Precio" DataField="Precio" />
                 <asp:CommandField HeaderText="Modificar" ShowSelectButton="true" SelectText="Modificar" ControlStyle-CssClass="text-decoration-none fw-medium" />
-
             </Columns>
         </asp:GridView>
+        <asp:Button Text="Agregar Producto" runat="server" CssClass="btn btn-link" Id="btnAgregar" OnClick="btnAgregar_Click"/>
     </div>
 </asp:Content>

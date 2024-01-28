@@ -21,14 +21,16 @@
         }
     </style>
 
-    <script type="text/javascript">
-        function soloNumeros(e) {
-            var key = window.event ? e.keyCode : e.which;
-            if (key < 48 || key > 57) {
-                e.preventDefault();
-            }
+<script type="text/javascript">
+    function soloNumeros(e) {
+        var key = window.event ? e.keyCode : e.which;
+        var keychar = String.fromCharCode(key);
+
+        if (!/^\d*\.?\d*$/.test(keychar) && key !== 8) {
+            e.preventDefault();
         }
-    </script>
+    }
+</script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

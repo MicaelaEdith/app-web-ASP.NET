@@ -14,6 +14,13 @@ namespace TPFinalNivel3RomeroMicaela
         int IdProducto;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+            if (Request.QueryString["codigo"] == null)
+            {
+                Response.Redirect("Administrar.aspx");
+            }
+
             string id = Request.QueryString["codigo"].ToString();
             IdProducto = int.Parse(id);
 
