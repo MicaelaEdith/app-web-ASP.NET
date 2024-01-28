@@ -33,22 +33,22 @@ namespace TPFinalNivel3RomeroMicaela
         protected global::System.Web.UI.WebControls.CheckBox chkFiltroAvanzado;
 
         /// <summary>
-        /// Control ddlCampo.
+        /// Control drpCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCampo;
+        protected global::System.Web.UI.WebControls.DropDownList drpCategoria;
 
         /// <summary>
-        /// Control ddlCriterio.
+        /// Control drpMarca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCriterio;
+        protected global::System.Web.UI.WebControls.DropDownList drpMarca;
 
         /// <summary>
         /// Control txtFiltroAvanzado.

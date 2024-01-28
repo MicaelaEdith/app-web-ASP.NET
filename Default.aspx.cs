@@ -17,15 +17,33 @@ namespace TPFinalNivel3RomeroMicaela
             CategoriaNegocio categorias = new CategoriaNegocio();
             List<Categoria> listaCat = categorias.listaCategorias();
 
-            drpCategoria.Items.Insert(0, "");
-            foreach (var cat in listaCat)
+            if (drpCategoria.Items.Count == 0)
             {
+                drpCategoria.Items.Insert(0, "");
+                foreach (var cat in listaCat)
+                {
 
-                drpCategoria.Items.Insert(cat.Id, cat.Descripcion);
+                    drpCategoria.Items.Insert(cat.Id, cat.Descripcion);
+                }
+
+                drpCategoria.DataBind();
             }
 
-            drpCategoria.DataBind();
+            MarcaNegocio marcas = new MarcaNegocio();
+            List<Marca> listaMar = marcas.listaMarcas();
 
+            if (drpMarca.Items.Count == 0)
+            {
+                drpMarca.Items.Insert(0, "");
+
+                foreach (var cat in listaMar)
+                {
+
+                    drpMarca.Items.Insert(cat.Id, cat.Descripcion);
+                }
+
+                drpMarca.DataBind();
+            }
             /* if (Master != null)
              {
                  List<Producto> listaBusqueda = ((master)Master).ListaProductosBusqueda;
@@ -34,12 +52,13 @@ namespace TPFinalNivel3RomeroMicaela
 
             ProductoNegocio negocio = new ProductoNegocio();
             ListaProductos = negocio.listaProductos();
-            
+
 
             foreach (var prod in ListaProductos)
             {
                 prod.ImagenUrl = ProductoNegocio.UrlImagenValida(prod.ImagenUrl);
             }
+
         }
 
         protected void btnBuscarSidebar_Click(object sender, EventArgs e)
@@ -57,29 +76,6 @@ namespace TPFinalNivel3RomeroMicaela
                 prod.ImagenUrl = ProductoNegocio.UrlImagenValida(prod.ImagenUrl);
             }
 
-        }
-
-        protected void drpCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(drpCategoria.SelectedValue) && drpCategoria.SelectedValue != "0")
-            {
-                MarcaNegocio marcas = new MarcaNegocio();
-                List<Marca> listaMar = marcas.listaMarcas();
-                drpMarca.Items.Insert(0, "");
-
-                foreach (var cat in listaMar)
-                {
-
-                    drpMarca.Items.Insert(cat.Id, cat.Descripcion);
-                }
-
-                drpMarca.DataBind();
-            }
-            else
-            {
-                drpMarca.Items.Clear();
-                drpMarca.Items.Insert(0, new ListItem("", ""));
-            }
         }
     }
 }

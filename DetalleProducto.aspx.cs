@@ -27,14 +27,12 @@ namespace TPFinalNivel3RomeroMicaela
                     txtTitulo.Text = prod.Nombre;
                     txtPrecio.InnerText = "$ "+prod.Precio.ToString("F2")+ ".-";
                     txtDescripcion.InnerText = prod.Descripcion;
+                    prod.ImagenUrl = ProductoNegocio.UrlImagenValida(prod.ImagenUrl);
                     imgProducto.Src = prod.ImagenUrl;
+                    imgProducto.Alt = prod.Nombre;
+
                 }
             }
-        }
-
-        protected void btnAgregar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

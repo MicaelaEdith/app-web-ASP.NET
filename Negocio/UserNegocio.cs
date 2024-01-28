@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,5 +49,56 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public static string UrlImagenValida(string imageUrl)
+        {
+            if (string.IsNullOrEmpty(imageUrl) || !UrlExists(imageUrl))
+            {
+                return "https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-falta-pagina-imagen-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-7509.jpg?w=740";
+            }
+            else
+            {
+                return imageUrl;
+            }
+        }
+
+        private static bool UrlExists(string url)
+        {
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "HEAD";
+                request.AllowAutoRedirect = false;
+                request.Timeout = 5000;
+
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                {
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        if (response.Headers["Location"] != null)
+                        {
+                            string redirectedUrl = response.Headers["Location"];
+                            return UrlExists(redirectedUrl);
+                        }
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (WebException)
+            {
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
+
+
 }

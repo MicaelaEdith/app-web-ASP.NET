@@ -55,7 +55,9 @@ namespace TPFinalNivel3RomeroMicaela
                     txtPrecio.Text = producto.Precio.ToString();
                     drpCategoria.SelectedValue = producto.Categoria.Id.ToString();
                     drpMarca.SelectedValue = producto.Marca.Id.ToString();
-                    txtUrlImg.Text = producto.ImagenUrl;
+                    producto.ImagenUrl = ProductoNegocio.UrlImagenValida(producto.ImagenUrl);
+                    imgProducto.Src = producto.ImagenUrl;
+                    imgProducto.Alt = producto.Nombre;
 
                 }
             }

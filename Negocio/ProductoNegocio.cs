@@ -267,18 +267,39 @@ namespace Negocio
         {
             try
             {
-                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = "HEAD";
+                request.AllowAutoRedirect = false;
+                request.Timeout = 5000;
+
                 using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    return (response.StatusCode == HttpStatusCode.OK);
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        if (response.Headers["Location"] != null)
+                        {
+                            string redirectedUrl = response.Headers["Location"];
+                            return UrlExists(redirectedUrl);
+                        }
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
-            catch
+            catch (WebException)
+            {
+                return false;
+            }
+            catch (Exception)
             {
                 return false;
             }
         }
+
+
 
         public List<Producto> busquedaRapida(String busqueda) {
 

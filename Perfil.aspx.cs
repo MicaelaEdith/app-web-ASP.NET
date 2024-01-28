@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
+using Negocio;
 
 namespace TPFinalNivel3RomeroMicaela
 {
@@ -19,11 +20,15 @@ namespace TPFinalNivel3RomeroMicaela
             else {
 
                 User user = (User)Session["user"];
+                UserNegocio negocio = new UserNegocio();
 
                 txtNombre.Text = user.nombre;
                 txtApellido.Text = user.apellido;
-                //imgPerfil.Src = user.urlImagenPerfil;
-                
+                user.urlImagenPerfil = UserNegocio.UrlImagenValida(user.urlImagenPerfil);
+                imgPerfil.Src = user.urlImagenPerfil;
+                imgPerfil.Alt = user.nombre;
+
+
             }
         }
 

@@ -22,21 +22,18 @@
         <div class="row m-3 mt-1">
             <div class="col-3">
                 <asp:Label Text="Categoria" runat="server" />
-                <asp:DropDownList runat="server" ID="ddlCampo" AutoPostBack="true" CssClass="form-control">
-                    <asp:ListItem Text="Nombre" />
-                    <asp:ListItem Text="Tipo" />
-                    <asp:ListItem Text="Número" />
+                <asp:DropDownList runat="server" ID="drpCategoria" AutoPostBack="true" CssClass="form-control">
                 </asp:DropDownList>
             </div>
             <div class="col-3">
                 <asp:Label Text="Marca" runat="server" />
-                <asp:DropDownList ID="ddlCriterio" CssClass="form-control" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="drpMarca" CssClass="form-control" runat="server"></asp:DropDownList>
             </div>
             <div class="col-3">
                 <asp:Label Text="Filtro" runat="server" />
                 <div style="display:flex">
                 <asp:TextBox ID="txtFiltroAvanzado" CssClass="form-control" runat="server" />
-                <asp:Button Text="Buscar" ID="btnBuscar" CssClass="btn btn-secondary" style="margin-left:1vw" runat="server" />
+                <asp:Button Text="Buscar" ID="btnBuscar" CssClass="btn btn-secondary" OnClick="btnBuscar_Click" style="margin-left:1vw" runat="server" />
                     </div>
             </div>
         </div>
@@ -55,6 +52,6 @@
                 <asp:CommandField HeaderText="Modificar" ShowSelectButton="true" SelectText="Modificar" ControlStyle-CssClass="text-decoration-none fw-medium" />
             </Columns>
         </asp:GridView>
-        <asp:Button Text="Agregar Producto" runat="server" CssClass="btn btn-link" Id="btnAgregar" OnClick="btnAgregar_Click"/>
+        <asp:Button Text="Agregar Producto" runat="server" CssClass="btn btn-link fw-medium link-underline-opacity-0" Id="btnAgregar" OnClick="btnAgregar_Click"/>
     </div>
 </asp:Content>

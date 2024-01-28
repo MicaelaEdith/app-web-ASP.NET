@@ -41,7 +41,7 @@
 
                 <div>
                     <asp:Label Text="Categoria" runat="server" CssClass="m-1" />
-                    <asp:DropDownList runat="server" CssClass="form-select mt-1 mb-2 " ID="drpCategoria" OnSelectedIndexChanged="drpCategoria_SelectedIndexChanged" AutoPostBac="false"></asp:DropDownList>
+                    <asp:DropDownList runat="server" CssClass="form-select mt-1 mb-2 " ID="drpCategoria" AutoPostBack="true"></asp:DropDownList>
                 </div>
                 <div>
                     <asp:Label Text="Marca" runat="server" CssClass="m-1"/>
@@ -67,7 +67,7 @@
                     { %>
                 <div class="col-3 cardProducto position-relative p-1 m-2" style="width: calc(25% - 2vw); text-align: center">
                     <div class="img-container">
-                        <img src="<%: prod.ImagenUrl %>" class="card-img-top img-fluid" style="object-fit: contain;" alt="<%: prod.Nombre %>">
+                        <img src="<%: prod.ImagenUrl %>" class="card-img-top img-fluid" style="object-fit: contain;">
                     </div>
                     <div class="card-body p-0 mb-5">
                         <h5 class="card-title"><%: prod.Nombre %> </h5>

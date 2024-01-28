@@ -6,7 +6,7 @@
 <div class="card mb-5 mt-5 mx-auto p-4" style="max-width: 650px;">
         <div class="row g-0">
             <div class="col-md-4">
-                <img runat="server" id="imgProducto" class="img-fluid rounded-start" alt="Producto" />
+                <img src="<%: prod.ImagenUrl %>" runat="server" id="imgProducto" class="img-fluid rounded-start" alt="<%: prod.Nombre %>" />
             </div>
             <div class="col-md-8">
                 <div class="card-body">
@@ -14,7 +14,6 @@
                     <asp:Label Text="" ID="txtTitulo" runat="server" CssClass="card-title display-6 mb-3" />
                     <p runat="server" id="txtPrecio" class="card-text mt-3"></p>
                     <p runat="server" id="txtDescripcion" class="card-text mt-3"></p>
-                    <asp:Button Text="Agregar al Carrito" CssClass="btn btn-secondary position-absolute bottom-0 mb-2 end-0 translate-middle-x" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" />
                 </div>
             </div>
         </div>
