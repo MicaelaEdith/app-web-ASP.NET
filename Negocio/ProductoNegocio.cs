@@ -65,7 +65,7 @@ namespace Negocio
                 datos.setearParametro("@Nombre", nuevo.Nombre);
                 datos.setearParametro("@Descripcion", nuevo.Descripcion);
                 datos.setearParametro("@ImagenUrl", nuevo.ImagenUrl);
-                datos.setearParametro("@Precio",nuevo.Precio);
+                datos.setearParametro("@Precio", nuevo.Precio);
                 datos.setearParametro("@IdCategoria", nuevo.Categoria.Id);
                 datos.setearParametro("@IdMarca", nuevo.Marca.Id);
                 datos.Insertar();
@@ -88,14 +88,14 @@ namespace Negocio
             try
             {
                 datos.Consulta("update ARTICULOS set codigo=@codigo,nombre=@nombre,descripcion=@descripcion,idMarca=@idMarca,idCategoria=@idCategoria,imagenUrl=@img, precio=@precio where Id=@id");
-                datos.setearParametro("@codigo",producto.Codigo);
-                datos.setearParametro("@nombre",producto.Nombre);
-                datos.setearParametro("@descripcion",producto.Descripcion);
-                datos.setearParametro("@idMarca",producto.Marca.Id);
-                datos.setearParametro("@idCategoria",producto.Categoria.Id);
-                datos.setearParametro("@img",producto.ImagenUrl);
-                datos.setearParametro("@precio",producto.Precio);
-                datos.setearParametro("@id",producto.Id);
+                datos.setearParametro("@codigo", producto.Codigo);
+                datos.setearParametro("@nombre", producto.Nombre);
+                datos.setearParametro("@descripcion", producto.Descripcion);
+                datos.setearParametro("@idMarca", producto.Marca.Id);
+                datos.setearParametro("@idCategoria", producto.Categoria.Id);
+                datos.setearParametro("@img", producto.ImagenUrl);
+                datos.setearParametro("@precio", producto.Precio);
+                datos.setearParametro("@id", producto.Id);
 
                 datos.Insertar();
 
@@ -132,65 +132,65 @@ namespace Negocio
         {
             if (min == "") min = "0";
             if (max == "") max = "0";
-            
-                List<Producto> productosEncontrados = new List<Producto>();
-                AccesoDatos datos = new AccesoDatos();
+
+            List<Producto> productosEncontrados = new List<Producto>();
+            AccesoDatos datos = new AccesoDatos();
             string consulta = "SELECT A.Id, Codigo, Nombre,A.Descripcion, M.Descripcion as Marca,C.Descripcion as Categoria,ImagenUrl,Precio,A.IdMarca,A.IdCategoria FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE (M.Id=A.IdMarca and C.Id=A.IdCategoria) ";
-                try
-                {
+            try
+            {
                 if (filtro == null)
                 {
-                        if (min != "0" && max!= "0")
-                            consulta += " and precio between " + min + " and " + max;
-                        else if (min == "0" && max != "0")
-                            consulta += " and precio <= " + max;
-                        else if (min != "0" && max =="0")
-                            consulta += " and precio >= " + min;
+                    if (min != "0" && max != "0")
+                        consulta += " and precio between " + min + " and " + max;
+                    else if (min == "0" && max != "0")
+                        consulta += " and precio <= " + max;
+                    else if (min != "0" && max == "0")
+                        consulta += " and precio >= " + min;
 
                 }
 
 
-                if(categoria != "")consulta+= " and C.descripcion = '"+categoria+"'";
+                if (categoria != "") consulta += " and C.descripcion = '" + categoria + "'";
 
-                if (marca != "") consulta +=" and M.descripcion= '"+marca+"'";
+                if (marca != "") consulta += " and M.descripcion= '" + marca + "'";
 
-                if (filtro.Trim() != "") consulta += " and (nombre like '%"+filtro+"%' or A.descripcion like '%"+filtro+"%')";
+                if (filtro.Trim() != "") consulta += " and (nombre like '%" + filtro + "%' or A.descripcion like '%" + filtro + "%')";
 
-                    datos.Consulta(consulta);
-                    datos.Leer();
-                    while (datos.Lector.Read())
-                    {
-                        Producto aux = new Producto();
-                        aux.Id = (int)datos.Lector["Id"];
-                        aux.Codigo = (string)datos.Lector["Codigo"];
-                        aux.Nombre = (string)datos.Lector["Nombre"];
-                        aux.Descripcion = (string)datos.Lector["Descripcion"];
-                        aux.Marca = new Marca();
-                        aux.Marca.Id = (int)datos.Lector["IdMarca"];
-                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
-                        aux.Categoria = new Categoria();
-                        aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
-                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                        aux.Precio = (decimal)datos.Lector["Precio"];
-
-                        productosEncontrados.Add(aux);
-                    }
-
-                    return productosEncontrados;
-
-                }
-                catch (Exception ex)
+                datos.Consulta(consulta);
+                datos.Leer();
+                while (datos.Lector.Read())
                 {
+                    Producto aux = new Producto();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Marca = new Marca();
+                    aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    productosEncontrados.Add(aux);
+                }
+
+                return productosEncontrados;
+
+            }
+            catch (Exception ex)
+            {
 
 
                 throw ex;
-                }
+            }
 
-                finally
-                {
-                    datos.cerrarConexion();
-                }
+            finally
+            {
+                datos.cerrarConexion();
+            }
 
         }
 
@@ -226,12 +226,13 @@ namespace Negocio
 
         }
 
-        public Producto detalleProducto(int id) {
+        public Producto detalleProducto(int id)
+        {
 
             AccesoDatos datos = new AccesoDatos();
             Producto prod = new Producto();
 
-            string consulta = "SELECT A.Id, Codigo, Nombre,A.Descripcion, M.Descripcion as Marca,C.Descripcion as Categoria,ImagenUrl,Precio,A.IdMarca,A.IdCategoria FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE(M.Id= A.IdMarca and C.Id= A.IdCategoria) and A.id = "+id+";";
+            string consulta = "SELECT A.Id, Codigo, Nombre,A.Descripcion, M.Descripcion as Marca,C.Descripcion as Categoria,ImagenUrl,Precio,A.IdMarca,A.IdCategoria FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE(M.Id= A.IdMarca and C.Id= A.IdCategoria) and A.id = " + id + ";";
 
             datos.Consulta(consulta);
             datos.Leer();
@@ -304,16 +305,15 @@ namespace Negocio
             }
         }
 
-
-
-        public List<Producto> busquedaRapida(String busqueda) {
+        public List<Producto> busquedaRapida(String busqueda)
+        {
 
 
             List<Producto> productosEncontrados = new List<Producto>();
             AccesoDatos datos = new AccesoDatos();
 
 
-            string consulta = "select * from articulos where Nombre like '%"+busqueda+"%' or descripcion like '%"+busqueda+"%'";
+            string consulta = "select * from articulos where Nombre like '%" + busqueda + "%' or descripcion like '%" + busqueda + "%'";
             try
             {
                 datos.Consulta(consulta);
@@ -346,12 +346,102 @@ namespace Negocio
                 datos.cerrarConexion();
             }
 
+        }
+
+        public void agregarFavs(int idUser, int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                List<Producto> listaGuardados = buscarFavs(idUser);
+                bool guardado = false;
+
+                foreach (var prod in listaGuardados) {
+                    if (prod.Id == idArticulo)
+                        guardado = true;
+                }
+
+                if (!guardado)
+                {
+                    string consulta = "insert into favoritos (idUser, idArticulo) values ('" + idUser + "','" + idArticulo + "');";
+
+                    datos.Consulta(consulta);
+                    datos.Insertar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
 
         }
 
+        public List<Producto> buscarFavs(int idUser)
+        {
+            AccesoDatos datos = new AccesoDatos();
 
+            try
+            {
+                List<Producto> favoritos = new List<Producto>();
+                string consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.ImagenUrl, A.Precio FROM FAVORITOS F JOIN ARTICULOS A ON F.IdArticulo = A.Id WHERE F.IdUser = " + idUser + ";";
+                datos.Consulta(consulta);
+
+                datos.Leer();
+                while (datos.Lector.Read())
+                {
+                    Producto aux = new Producto();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    favoritos.Add(aux);
+                }
+
+                return favoritos;
+
+            }
+            catch (Exception ex)
+            {
+
+
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void EliminarFavs(int idUser, int idArticulo) {
+
+            AccesoDatos datos = new AccesoDatos();
+            string consulta = "delete from favoritos where idUser="+idUser+" and idArticulo="+idArticulo;
+
+            try
+            {
+                datos.Consulta(consulta);
+                datos.Insertar();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally {
+
+                datos.cerrarConexion();
+            }
+
+        }
     }
-
-
 }
-

@@ -17,20 +17,20 @@
             margin-right: 2vw;
             margin-left: 1vw;
             width: 20%;
-            border-right:inset;
+            border-right: inset;
         }
     </style>
 
-<script type="text/javascript">
-    function soloNumeros(e) {
-        var key = window.event ? e.keyCode : e.which;
-        var keychar = String.fromCharCode(key);
+    <script type="text/javascript">
+        function soloNumeros(e) {
+            var key = window.event ? e.keyCode : e.which;
+            var keychar = String.fromCharCode(key);
 
-        if (!/^\d*\.?\d*$/.test(keychar) && key !== 8) {
-            e.preventDefault();
+            if (!/^\d*\.?\d*$/.test(keychar) && key !== 8) {
+                e.preventDefault();
+            }
         }
-    }
-</script>
+    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -44,7 +44,7 @@
                     <asp:DropDownList runat="server" CssClass="form-select mt-1 mb-2 " ID="drpCategoria" AutoPostBack="true"></asp:DropDownList>
                 </div>
                 <div>
-                    <asp:Label Text="Marca" runat="server" CssClass="m-1"/>
+                    <asp:Label Text="Marca" runat="server" CssClass="m-1" />
                     <asp:DropDownList runat="server" CssClass="form-select mt-1 mb-4 " ID="drpMarca"></asp:DropDownList>
                 </div>
 
@@ -58,7 +58,7 @@
                 </div>
                 <asp:Button Text="Buscar" runat="server" CssClass="btn btn-secondary p-1 float-end" ID="btnBuscarSidebar" OnClick="btnBuscarSidebar_Click" />
             </div>
-            </div>
+        </div>
 
         <div class="col-9">
             <div class="row justify-content-start">

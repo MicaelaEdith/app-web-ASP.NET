@@ -11,6 +11,7 @@ namespace TPFinalNivel3RomeroMicaela
 {
     public partial class DetalleProducto : System.Web.UI.Page
     {
+        public Producto prod = new Producto();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,7 +19,7 @@ namespace TPFinalNivel3RomeroMicaela
 
             if (!string.IsNullOrEmpty(id))
             {
-                Producto prod = new Producto();
+                
                 ProductoNegocio producto = new ProductoNegocio();
                 prod = producto.detalleProducto(int.Parse(id));
 

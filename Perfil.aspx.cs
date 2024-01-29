@@ -11,6 +11,7 @@ namespace TPFinalNivel3RomeroMicaela
 {
     public partial class Favoritos : System.Web.UI.Page
     {
+        public List<Producto> listaFavs;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["user"] == null)
@@ -28,7 +29,22 @@ namespace TPFinalNivel3RomeroMicaela
                 imgPerfil.Src = user.urlImagenPerfil;
                 imgPerfil.Alt = user.nombre;
 
+                ProductoNegocio productoNegocio = new ProductoNegocio();
 
+                if (Request.QueryString["id"] != null) {
+
+                    int idArticulo = int.Parse(Request.QueryString["id"].ToString());
+                    productoNegocio.agregarFavs(user.Id,idArticulo);
+                }
+
+
+                listaFavs = productoNegocio.buscarFavs(user.Id);
+                foreach (var prod in listaFavs)
+                {
+                    prod.ImagenUrl = ProductoNegocio.UrlImagenValida(prod.ImagenUrl);
+                }
+
+                Page.DataBind();
             }
         }
 
@@ -53,6 +69,27 @@ namespace TPFinalNivel3RomeroMicaela
 
         protected void btnModificarPerfil_Click(object sender, EventArgs e)
         {
+
+        }
+
+        protected void eliminarFav_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string idProductoStr = btn.Attributes["data-producto-id"];
+            int idProducto =int.Parse(idProductoStr);
+
+            User user = (User)Session["user"];
+
+            ProductoNegocio negocio = new ProductoNegocio();
+            negocio.EliminarFavs(user.Id, idProducto);
+
+            listaFavs = negocio.buscarFavs(user.Id);
+            foreach (var prod in listaFavs)
+            {
+                prod.ImagenUrl = ProductoNegocio.UrlImagenValida(prod.ImagenUrl);
+            }
+
+            Page.DataBind();
 
         }
     }

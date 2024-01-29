@@ -99,6 +99,8 @@ namespace TPFinalNivel3RomeroMicaela
             string filtro = txtFiltrar.Text;
             ProductoNegocio negocio = new ProductoNegocio();
             List<Producto> lista = negocio.busquedaRapida(filtro);
+            dgvProductos.DataSource = lista;
+            dgvProductos.DataBind();
         }
     }
 }
