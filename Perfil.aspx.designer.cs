@@ -15,6 +15,15 @@ namespace TPFinalNivel3RomeroMicaela
     {
 
         /// <summary>
+        /// Control fileUploadImagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUploadImagen;
+
+        /// <summary>
         /// Control imgPerfil.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,24 @@ namespace TPFinalNivel3RomeroMicaela
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlImage imgPerfil;
+
+        /// <summary>
+        /// Control txtNuevoNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNuevoNombre;
+
+        /// <summary>
+        /// Control txtNuevoApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNuevoApellido;
 
         /// <summary>
         /// Control txtNombre.
@@ -40,6 +67,15 @@ namespace TPFinalNivel3RomeroMicaela
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtApellido;
+
+        /// <summary>
+        /// Control btnSaveChanges.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveChanges;
 
         /// <summary>
         /// Control btnModificarPerfil.

@@ -63,8 +63,10 @@
         <div class="col-9">
             <div class="row">
                 <%
-                    foreach (Dominio.Producto prod in ListaProductos)
-                    { %>
+                    if (ListaProductos.Count > 0)
+                    {
+                        foreach (Dominio.Producto prod in ListaProductos)
+                        { %>
                 <div class="col-3 cardProducto position-relative p-1 m-2" style="width: calc(25% - 2vw); text-align: center">
                     <div class="img-container">
                         <img src="<%: prod.ImagenUrl %>" class="card-img-top img-fluid" style="object-fit: contain;">
@@ -77,7 +79,15 @@
                         <a href="DetalleProducto.aspx?id=<%=prod.Id%>" class="btn btn-secondary position-absolute bottom-0 start-50 translate-middle-x mb-1 p-1">Ver detalle</a>
                     </div>
                 </div>
-                <% } %>
+                <% }
+                    }
+                    else
+                    { %>
+                <div class="m-1 mt-5">
+                    <span class="m-2 alert alert-primary">No se encontraron productos</span>
+                </div>
+
+                <%} %>
             </div>
         </div>
     </div>

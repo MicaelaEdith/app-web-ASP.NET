@@ -27,12 +27,5 @@ namespace TPFinalNivel3RomeroMicaela
 
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            String busqueda = txtBuscar.Text;
-            ProductoNegocio negocio = new ProductoNegocio();
-            ListaProductosBusqueda = negocio.busquedaRapida(busqueda);
-
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -49,7 +50,6 @@ namespace TPFinalNivel3RomeroMicaela
                 {
                     prod.ImagenUrl = ProductoNegocio.UrlImagenValida(prod.ImagenUrl);
                 }
-
                 Page.DataBind();
             }
         }
@@ -60,6 +60,7 @@ namespace TPFinalNivel3RomeroMicaela
             Response.Redirect("Default.aspx");
         }
 
+
         protected void btnAdministrar_Click(object sender, EventArgs e)
         {
             if (Session["administrar"] != null)
@@ -68,14 +69,57 @@ namespace TPFinalNivel3RomeroMicaela
             }
             else {
                 Response.Redirect("Default.aspx");
-
             }
 
         }
 
         protected void btnModificarPerfil_Click(object sender, EventArgs e)
         {
+            User user = (User)Session["user"];
 
+            txtNuevoNombre.Visible = true;
+            txtNuevoNombre.Text = user.nombre;
+            txtNuevoApellido.Visible = true;
+            txtNuevoApellido.Text = user.apellido;
+            fileUploadImagen.Visible = true;
+
+            txtNombre.Visible = false;
+            txtApellido.Visible = false;
+            btnModificarPerfil.Visible = false;
+
+            btnSaveChanges.Visible = true;
+        }
+
+        protected void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            User user = (User)Session["user"];
+            UserNegocio negocio = new UserNegocio();
+
+            if (txtNuevoNombre.Text.Trim()!="")
+                user.nombre = txtNuevoNombre.Text;
+            if (txtNuevoApellido.Text.Trim() != "")
+                user.apellido = txtNuevoApellido.Text;
+
+            if (fileUploadImagen.HasFile)
+            {
+                string file = Path.GetFileName(fileUploadImagen.FileName);
+                string ruta = Server.MapPath("~/Images/ProfilePictures/") + file;
+                fileUploadImagen.SaveAs(ruta);
+                user.urlImagenPerfil = "~/Images/ProfilePictures/" + file;
+            }
+
+            negocio.ActualizarUsuario(user);
+
+            txtNombre.Visible = true;
+            txtApellido.Visible = true;
+            btnModificarPerfil.Visible = true;
+
+            txtNuevoNombre.Visible = false;
+            txtNuevoApellido.Visible = false;
+            fileUploadImagen.Visible = false;
+            btnSaveChanges.Visible = false;
+
+            Response.Redirect("Perfil.aspx");
         }
 
     }

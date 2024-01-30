@@ -47,10 +47,7 @@
                             </li>
                             <%}%>
                         </ul>
-                        <form class="d-flex" role="search">
-                            <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control me-1 mb-1" placeholder="Ingrese producto"></asp:TextBox>
-                            <asp:Button Text="Buscar" runat="server" CssClass="btn btn-outline-light mb-1" ID="btnBuscar" OnClick="btnBuscar_Click" CausesValidation="false"/>
-                        </form>
+
                     </div>
                 </div>
 

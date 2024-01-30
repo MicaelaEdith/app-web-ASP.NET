@@ -148,13 +148,16 @@ namespace Negocio
                         consulta += " and precio >= " + min;
 
                 }
-
+                else { 
+                
+                consulta += " and (nombre like '%" + filtro + "%' or A.descripcion like '%" + filtro + "%')";
+                
+                }
 
                 if (categoria != "") consulta += " and C.descripcion = '" + categoria + "'";
 
                 if (marca != "") consulta += " and M.descripcion= '" + marca + "'";
 
-                if (filtro.Trim() != "") consulta += " and (nombre like '%" + filtro + "%' or A.descripcion like '%" + filtro + "%')";
 
                 datos.Consulta(consulta);
                 datos.Leer();

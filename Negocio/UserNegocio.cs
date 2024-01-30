@@ -72,10 +72,34 @@ namespace Negocio
 
         }
 
+        public void ActualizarUsuario(User user) {
+           
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "update users set nombre='"+user.nombre+"', apellido='"+user.apellido+"', urlImagenPerfil='"+user.urlImagenPerfil+"' where id="+user.Id+";";
+                datos.Consulta(consulta);
+                datos.Insertar();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+
         public static string UrlImagenValida(string imageUrl)
         {
             if (string.IsNullOrEmpty(imageUrl) || !UrlExists(imageUrl))
             {
+
                 return "https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-falta-pagina-imagen-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-7509.jpg?w=740";
             }
             else
@@ -88,27 +112,32 @@ namespace Negocio
         {
             try
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.Method = "HEAD";
-                request.AllowAutoRedirect = false;
-                request.Timeout = 5000;
-
-                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                if (!url.Contains("/Images/ProfilePictures/"))
                 {
-                    if (response.StatusCode == HttpStatusCode.OK)
+
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                    request.Method = "HEAD";
+                    request.AllowAutoRedirect = false;
+                    request.Timeout = 5000;
+
+                    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                     {
-                        if (response.Headers["Location"] != null)
+                        if (response.StatusCode == HttpStatusCode.OK)
                         {
-                            string redirectedUrl = response.Headers["Location"];
-                            return UrlExists(redirectedUrl);
+                            if (response.Headers["Location"] != null)
+                            {
+                                string redirectedUrl = response.Headers["Location"];
+                                return UrlExists(redirectedUrl);
+                            }
+                            return true;
                         }
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
+                        else
+                        {
+                            return false;
+                        }
                     }
                 }
+                return true;
             }
             catch (WebException)
             {

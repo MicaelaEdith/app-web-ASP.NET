@@ -30,6 +30,8 @@ namespace TPFinalNivel3RomeroMicaela
             }
 
             if (filtroAvanzado) {
+
+                txtFiltrar.Visible = false;
                 CategoriaNegocio categorias = new CategoriaNegocio();
                 List<Categoria> listaCat = categorias.listaCategorias();
 
@@ -62,6 +64,8 @@ namespace TPFinalNivel3RomeroMicaela
                 }
 
             }
+            else
+                txtFiltrar.Visible = true;
         }
 
         protected void dgvProductos_RowCommand(object sender, GridViewCommandEventArgs e)
