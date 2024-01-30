@@ -11,7 +11,17 @@ namespace TPFinalNivel3RomeroMicaela
 {
     public partial class master : System.Web.UI.MasterPage
     {
-        public List<Producto> ListaProductosBusqueda { get; set; }
+        public List<Producto> ListaProductosBusqueda
+        {
+            get
+            {
+                return Session["ListaProductosBusqueda"] as List<Producto>;
+            }
+            set
+            {
+                Session["ListaProductosBusqueda"] = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -22,7 +32,6 @@ namespace TPFinalNivel3RomeroMicaela
             String busqueda = txtBuscar.Text;
             ProductoNegocio negocio = new ProductoNegocio();
             ListaProductosBusqueda = negocio.busquedaRapida(busqueda);
-            Console.WriteLine("paso");
 
         }
     }

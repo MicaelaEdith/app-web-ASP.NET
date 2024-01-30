@@ -44,15 +44,28 @@ namespace TPFinalNivel3RomeroMicaela
 
                 drpMarca.DataBind();
             }
-             if (Master != null)
-             {
-                 List<Producto> listaBusqueda = ((master)Master).ListaProductosBusqueda;
 
-             }
+            if (!IsPostBack)
+            {
+                ProductoNegocio negocio = new ProductoNegocio();
+                ListaProductos = negocio.listaProductos();
+            }
 
-            ProductoNegocio negocio = new ProductoNegocio();
-            ListaProductos = negocio.listaProductos();
+            if (Master != null)
+            {
+                List<Producto> listaBusqueda = ((master)Master).ListaProductosBusqueda;
 
+                if (listaBusqueda != null && listaBusqueda.Any())
+                {
+                    ListaProductos = listaBusqueda;
+                }
+                else
+                {
+                    ProductoNegocio negocio = new ProductoNegocio();
+                    ListaProductos = negocio.listaProductos();
+                }
+
+            }
 
             foreach (var prod in ListaProductos)
             {
