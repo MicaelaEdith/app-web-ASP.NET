@@ -50,6 +50,28 @@ namespace Negocio
             }
         }
 
+        public void CrearCuenta(User user) {
+
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "insert into USERS(email,pass,nombre,apellido, admin) values ('" + user.email + "','" + user.pass + "','" + user.nombre + "','" + user.apellido + "', 0);";
+                datos.Consulta(consulta);
+                datos.Insertar();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally {
+                datos.cerrarConexion();
+            }
+
+        }
+
         public static string UrlImagenValida(string imageUrl)
         {
             if (string.IsNullOrEmpty(imageUrl) || !UrlExists(imageUrl))

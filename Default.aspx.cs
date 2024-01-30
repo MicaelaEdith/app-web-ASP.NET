@@ -44,11 +44,11 @@ namespace TPFinalNivel3RomeroMicaela
 
                 drpMarca.DataBind();
             }
-            /* if (Master != null)
+             if (Master != null)
              {
                  List<Producto> listaBusqueda = ((master)Master).ListaProductosBusqueda;
 
-             }*/
+             }
 
             ProductoNegocio negocio = new ProductoNegocio();
             ListaProductos = negocio.listaProductos();

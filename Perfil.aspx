@@ -9,17 +9,31 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 "
         rel="stylesheet">
     <style>
-.splide__track--nav>.splide__list>.splide__slide.is-active {
-    border: none;
-    transform:scale(1.03);
-}
+        .splide__track--nav > .splide__list > .splide__slide.is-active {
+            border: none;
+            transform: scale(1.04);
+        }
+
+        .splide__list {
+            display: flex;
+            padding: 5px;
+        }
+
+        .splide__slide {
+            list-style: none;
+            margin: 0 ;
+        }
+
+        .cardProducto {
+            width: 18vw;
+        }
     </style>
 
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="display: flex">
-        <div class="card mb-3 mt-5 m-3 p-3" style="max-width: 350px;">
+        <div class="card mb-3 mt-5 p-1" style="max-width: 350px; margin-left:1vw;">
             <div class="row g-0">
                 <div class="col-md-3">
                     <img src=".." runat="server" class="img-fluid rounded-start" alt="Perfil" id="imgPerfil" />
@@ -44,25 +58,24 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             <%}%>
         </div>
 
-        <div class="m-0" style="width: 70%;">
-            <h4>Favs</h4>
-
+        <div class="m-2 mt-3" style="width: 70%;">
             <div id="splide" class="splide">
-                <div class="splide__track">
+                <div class="splide__track m-1 mt-1">
                     <ul class="splide__list p-0 float-start grid text-center" style="display: flex">
                         <% foreach (Dominio.Producto prod in listaFavs)
                             { %>
-                        <li class="splide__slide" style="list-style: none; margin: 1vw;">
-                            <div class="col-4 cardProducto position-relative p-1 m-2" style="width: 18vw;">
+                        <li class="splide__slide" style="list-style: none;">
+                            <div class="col-3 cardProducto position-relative p-1 m-1 mt-3" style="width: 18vw;">
                                 <div class="img-container">
                                     <img src="<%= prod.ImagenUrl %>" class="card-img-top img-fluid" style="object-fit: contain;">
                                 </div>
                                 <div class="card-body p-0 mb-5">
+                                    <label data-id="<%=prod.Id %>"></label>
                                     <h5 class="card-title"><%= prod.Nombre %></h5>
                                     <p class="card-text pb-2 MB-3"><%= prod.Descripcion %></p>
                                 </div>
                                 <div>
-                                    <asp:Button Text="Eliminar de Favoritos" runat="server" ID="eliminarFav" OnClick="eliminarFav_Click" data-producto-id='<%= prod.Id %>' class="btn btn-secondary position-absolute bottom-0 start-50 translate-middle-x mb-1 p-1 w-75" />
+                                    <a href="Perfil.aspx?eliminar=<%=prod.Id%>" class="btn btn-secondary position-absolute bottom-0 start-50 translate-middle-x mb-1 p-1 w-75">Eliminar de Favoritos</a>
                                 </div>
                             </div>
                         </li>
@@ -77,16 +90,16 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         document.addEventListener('DOMContentLoaded', function () {
             new Splide('#splide', {
                 type: 'carousel',
-                fixedWidth: 350,
-                fixedHeight: 100,
+                fixedWidth: 200,
+                fixedHeight: auto,
                 gap: 10,
                 pagination: false,
                 focus: 'center',
                 isNavigation: true,
                 breakpoints: {
                     600: {
-                        fixedWidth: 400,
-                        fixedHeight: 225,
+                        fixedWidth: 350,
+                        fixedHeight: 'auto',
                     }
                 }
             }).mount();

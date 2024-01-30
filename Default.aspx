@@ -61,7 +61,7 @@
         </div>
 
         <div class="col-9">
-            <div class="row justify-content-start">
+            <div class="row">
                 <%
                     foreach (Dominio.Producto prod in ListaProductos)
                     { %>
@@ -69,7 +69,7 @@
                     <div class="img-container">
                         <img src="<%: prod.ImagenUrl %>" class="card-img-top img-fluid" style="object-fit: contain;">
                     </div>
-                    <div class="card-body p-0 mb-5">
+                    <div class="card-body p-0 mb-5 align-content-center">
                         <h5 class="card-title"><%: prod.Nombre %> </h5>
                         <p class="card-text pb-2 MB-3"><%: prod.Descripcion%></p>
                     </div>
