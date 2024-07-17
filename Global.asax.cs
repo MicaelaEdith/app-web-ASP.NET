@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace TPFinalNivel3RomeroMicaela
+namespace Proyecto_FlowerPower
 {
     public class Global : System.Web.HttpApplication
     {

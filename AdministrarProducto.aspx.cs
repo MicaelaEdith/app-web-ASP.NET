@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Dominio;
 using Negocio;
 
-namespace TPFinalNivel3RomeroMicaela
+namespace Proyecto_FlowerPower
 {
     public partial class AdministrarProducto : System.Web.UI.Page
     {

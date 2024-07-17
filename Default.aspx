@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TPFinalNivel3RomeroMicaela.Default" EnableViewState="true" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Proyecto_FlowerPower.Default" EnableViewState="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -76,7 +76,7 @@
                         <p class="card-text pb-2 MB-3"><%: prod.Descripcion%></p>
                     </div>
                     <div>
-                        <a href="DetalleProducto.aspx?id=<%=prod.Id%>" class="btn btn-secondary position-absolute bottom-0 start-50 translate-middle-x mb-1 p-1">Ver detalle</a>
+                        <a href="DetalleProducto.aspx?id=<%=prod.Id%>" class="btn position-absolute bottom-0 start-50 translate-middle-x mb-1 p-1">Ver detalle</a>
                     </div>
                 </div>
                 <% }

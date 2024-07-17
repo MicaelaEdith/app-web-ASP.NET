@@ -10,3 +10,9 @@ C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\Dominio\obj\Debug\Dominio
 C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\Dominio\obj\Debug\Dominio.dll
 C:\Users\micka\source\repos\TPFinalNivel3RomeroMicaela\Dominio\obj\Debug\Dominio.pdb
+C:\Users\micka\Documents\Programacion\Github\app-web-ASP.NET\Dominio\bin\Debug\Dominio.dll
+C:\Users\micka\Documents\Programacion\Github\app-web-ASP.NET\Dominio\bin\Debug\Dominio.pdb
+C:\Users\micka\Documents\Programacion\Github\app-web-ASP.NET\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\micka\Documents\Programacion\Github\app-web-ASP.NET\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\micka\Documents\Programacion\Github\app-web-ASP.NET\Dominio\obj\Debug\Dominio.dll
+C:\Users\micka\Documents\Programacion\Github\app-web-ASP.NET\Dominio\obj\Debug\Dominio.pdb

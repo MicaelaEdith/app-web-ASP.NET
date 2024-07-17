@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="CrearCuenta.aspx.cs" Inherits="TPFinalNivel3RomeroMicaela.CrearCuenta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="CrearCuenta.aspx.cs" Inherits="Proyecto_FlowerPower.CrearCuenta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

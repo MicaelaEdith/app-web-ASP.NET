@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using Dominio;
 using Negocio;
 
-namespace TPFinalNivel3RomeroMicaela
+namespace Proyecto_FlowerPower
 {
     public partial class Favoritos : System.Web.UI.Page
     {

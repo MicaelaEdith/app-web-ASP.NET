@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="EliminarProducto.aspx.cs" Inherits="TPFinalNivel3RomeroMicaela.EliminarProducto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="EliminarProducto.aspx.cs" Inherits="Proyecto_FlowerPower.EliminarProducto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

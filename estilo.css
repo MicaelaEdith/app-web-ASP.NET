@@ -8,7 +8,14 @@
 */
 :root {
     font-family: 'Roboto', sans-serif;
+    --bs-primary: #F86583;
 }
+
+btn {
+    background-color: #F86583;
+    color: white;
+}
+
 
 body{
     padding-bottom:10vh;
@@ -18,7 +25,9 @@ body{
     width: 100%;
     /*position: fixed;*/
     border-bottom: 1px solid var(--grey);
-   /* z-index: 1000;*/
+    background-color: #F86583;
+    color: white;
+    /* z-index: 1000;*/
 }
 .nav-link:hover {
     transform: scale(1.5);
