@@ -8,7 +8,9 @@
 */
 :root {
     font-family: 'Roboto', sans-serif;
-    --bs-primary: #F86583;
+    --my-primary: #F86583;
+    --my-secondary: #EB4B79;
+    --my-terciary: #FF7425;
 }
 
 btn {
@@ -21,16 +23,19 @@ body{
     padding-bottom:10vh;
     background-color:white;
     }
-.navbar {
+.my-navbar {
     width: 100%;
     /*position: fixed;*/
-    border-bottom: 1px solid var(--grey);
-    background-color: #F86583;
+    /* border-bottom: 1px solid var(--my-secondary);*/
+    background-color: var(--my-primary);
     color: white;
+    list-style: none;
     /* z-index: 1000;*/
 }
-.nav-link:hover {
-    transform: scale(1.5);
+.my-nav-link:hover {
+    transform: scale(1.04);
+    color: var(--my-terciary);
+    list-style: none;
 }
 .cardProducto {
     width:100%;

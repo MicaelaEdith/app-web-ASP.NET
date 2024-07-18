@@ -26,14 +26,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <nav class="navbar navbar-expand-lg border-bottom border-body" data-bs-theme="light">
+            <nav class="navbar my-navbar navbar-expand-lg border-bottom" data-bs-theme="dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand nav-link-home" href="default.aspx">Home</a>
+                    <a class="navbar-brand nav-link-home mr-3" href="default.aspx">Home</a>
                     <button class="navbar-toggler" style="order: -1;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul class="my-navbar my-nav-link me-auto mb-2 mb-lg-0">
                             <%if (Session["user"] == null)
                                 { %>
                             <li class="nav-item">
